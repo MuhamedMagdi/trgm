@@ -8,7 +8,7 @@ To install the `trgm` tool, follow these steps:
 
 **Clone the repository**:
 ```sh
-git clone <repository_url>
+git clone https://github.com/MuhamedMagdi/trgm
 ```
 
 **Navigate to the project directory**:
