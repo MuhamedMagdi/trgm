@@ -1,0 +1,36 @@
+import { input, error, echo_info } from "std/env";
+import { split, replace } from "std/text";
+
+const language_codes = ["ar", "fr", "sw", "rw"];
+const language_names = ["Arabic", "French", "Swahili", "Kinyarwanda"];
+
+fun build_translation_url(message: Text, target_language: Text): Text {
+    message = replace(message, " ", "%20");
+    return "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl={target_language}&dt=t&q={message}&ie=UTF-8&oe=UTF-8";
+}
+
+fun translate_message(message: Text, target_language: Text): Text {
+    const url = build_translation_url(message, target_language);
+
+    const translated_message = $curl -s {url} | jq -r '.[0][0][0]'$ failed {
+        error("Failed to translate to {target_language}.");
+    }
+
+    return replace(translated_message, "\n", "");
+}
+
+let input_message = input("Enter the key and message to translate in the format 'key=message': ");
+
+let message_array = split(input_message, "=");
+
+if (len(message_array) != 2 ) {
+    error("Invalid input format. The message should be in the format 'key=message'.");
+}
+
+for index, language_code in language_codes {
+    let original_message = message_array[1];
+    let translated_message = translate_message(original_message, language_code);
+
+    echo_info(language_names[index]);
+    echo "{message_array[0]}={translated_message}\n";
+}
