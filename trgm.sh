@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Written in [Amber](https://amber-lang.com/)
 # version: 0.3.5-alpha
-# date: 2024-12-09 22:13:40
+# date: 2024-12-09 22:34:14
 replace__0_v0() {
     local source=$1
     local search=$2
@@ -88,7 +88,7 @@ translate_message__116_v0() {
     __AF_translate_message116_v0="${__AF_replace0_v0__19_12}"
     return 0
 }
-input__94_v0 "enter the key and message to translate in the format 'key=message': "
+input__94_v0 "Enter the key and message to translate in the format 'key=message': "
 __AF_input94_v0__22_21="${__AF_input94_v0}"
 __2_input_message="${__AF_input94_v0__22_21}"
 split__3_v0 "${__2_input_message}" "="
