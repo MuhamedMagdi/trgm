@@ -1,8 +1,8 @@
 import { input, error, echo_info } from "std/env";
 import { split, replace } from "std/text";
 
-const language_codes = ["ar", "fr", "sw", "rw"];
-const language_names = ["Arabic", "French", "Swahili", "Kinyarwanda"];
+const language_codes = ["ar", "fr", "rw", "sw"];
+const language_names = ["Arabic", "French", "Kinyarwanda", "Swahili"];
 
 fun build_translation_url(message: Text, target_language: Text): Text {
     message = replace(message, " ", "%20");

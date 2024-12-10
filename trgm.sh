@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Written in [Amber](https://amber-lang.com/)
 # version: 0.3.5-alpha
-# date: 2024-12-09 22:34:14
+# date: 2024-12-10 12:28:49
 replace__0_v0() {
     local source=$1
     local search=$2
@@ -55,9 +55,9 @@ error__109_v0() {
         exit ${exit_code}
     fi
 }
-__AMBER_ARRAY_3=("ar" "fr" "sw" "rw")
+__AMBER_ARRAY_3=("ar" "fr" "rw" "sw")
 declare -r __0_language_codes=("${__AMBER_ARRAY_3[@]}")
-__AMBER_ARRAY_4=("Arabic" "French" "Swahili" "Kinyarwanda")
+__AMBER_ARRAY_4=("Arabic" "French" "Kinyarwanda" "Swahili")
 declare -r __1_language_names=("${__AMBER_ARRAY_4[@]}")
 build_translation_url__115_v0() {
     local message=$1
